@@ -1,4 +1,4 @@
-from datetime import date, datetime,time
+from datetime import date, datetime
 import math
 from wechatpy import WeChatClient
 from wechatpy.client.api import WeChatMessage, WeChatTemplate
@@ -6,7 +6,7 @@ import requests
 import os
 import random
 
-today =str(datetime.datetime.now().date())
+today = datetime.datetime.now().day
 start_date = os.environ['START_DATE']
 city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
