@@ -52,14 +52,14 @@ wea, temperature, max_temperature, min_temperature = get_weather()
 # data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 data = {"weather":{"value":wea,"color":get_random_color()},"temperature":{"value":temperature,"color":get_random_color()},"love_days":{"value":get_count(),"color":get_random_color()},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"words":{"value":get_words(),"color":get_random_color()},"max_temperature": {"value":max_temperature,"color":get_random_color()},"min_temperature":{"value":min_temperature, "color":get_random_color()}}
 # res = wm.send_template(user_id, template_id, data)
-# print(res)
+
 count = 0
 for user_id in user_ids:
   res = wm.send_template(user_id, template_id, data)
   count+=1
 
-print("发送了" + str(count) + "条消息")
-
+# print("发送了" + str(count) + "条消息")
+print(res)
 # wm = WeChatMessage(client)
 # wea, temperature, highest, lowest = get_weather()
 # data = {"weather":{"value":wea,"color":get_random_color()},"temperature":{"value":temperature,"color":get_random_color()},"love_days":{"value":get_count(),"color":get_random_color()},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"words":{"value":get_words(),"color":get_random_color()},"highest": {"value":highest,"color":get_random_color()},"lowest":{"value":lowest, "color":get_random_color()}}
