@@ -49,12 +49,9 @@ client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 wea, temperature,low,high,humidity,wind,pm25= get_weather()
 data = {"weather":{"value":wea,"color":get_random_color()},"temperature":{"value":temperature,"color":get_random_color()},"love_days":{"value":get_count(),"color":get_random_color()},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"humidity": {"value":humidity,"color":get_random_color()},"wind": {"value":wind,"color":get_random_color()},"pm25": {"value":pm25,"color":get_random_color()},"min_temperature":{"value":low, "color":get_random_color()},"max_temperature":{"value":high, "color":get_random_color()}}
-# res = wm.send_template(user_id, template_id, data)
-# print(res)
-count = 0
-for user_id in user_id:
-  res = wm.send_template(user_id, template_id, data)
-  count+=1
+res = wm.send_template(user_id, template_id, data)
+print(res)
+
 
 print("发送了" + str(count) + "条消息")
 # # print("发送了" + str(count) + "条消息")
