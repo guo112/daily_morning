@@ -52,7 +52,7 @@ data = {"weather":{"value":wea,"color":get_random_color()},"temperature":{"value
 # res = wm.send_template(user_id, template_id, data)
 # print(res)
 count = 0
-for user_id in user_ids:
+for user_id in user_id:
   res = wm.send_template(user_id, template_id, data)
   count+=1
 
